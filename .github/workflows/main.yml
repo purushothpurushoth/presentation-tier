@@ -19,4 +19,4 @@ jobs:
         run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
         
       - name: Print branch name
-        run: echo " ${GITHUB_OUTPUT}"
+        run: echo branch
