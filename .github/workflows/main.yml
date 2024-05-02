@@ -11,5 +11,4 @@ jobs:
     steps:
       - name: checking
         shell: bash
-        run: echo "${github.run_id}"
-        
+        run: echo "${{github.run_id}}"
