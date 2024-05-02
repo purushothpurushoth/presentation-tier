@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Extract run number
         shell: bash
-        run: echo "Run number: ${{github.run_number}}"
+        run: echo "${{github.run_number}}"
       
       - name: Extract branch name
         id: extract_branch
