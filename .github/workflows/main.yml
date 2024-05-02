@@ -5,9 +5,10 @@ env:
   BuildNumber: ${{github.run_id}}-${{github.run_number}}
 jobs:
   setup_and_compile:
-    runs-on: ubuntu-latest
     container:
       image: node:18
+    runs-on: ubuntu-latest
+    
     steps:
       - name: checking
         shell: bash
