@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Extract branch name
+      - name: Extract run number
         shell: bash
-        run: echo "${{github.run_number}}"
+        run: echo "Run number: ${{github.run_number}}"
+      
       - name: Extract branch name
-        shell: bash
-        run: echo "branch=$(echo ${GITHUB_REF#refs/heads})" >> $GITHUB_OUTPUT
-        id: extract_branch  
-       
+        id: extract_branch
+        run: echo "branch=$(echo ${GITHUB_REF#refs/heads})"
+        
+      - name: Print branch name
+        run: echo "Branch name: ${{ steps.extract_branch.outputs.branch }}"
